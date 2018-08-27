@@ -1,0 +1,23 @@
+#game_body{
+    height: 320px;
+    width: 320px;
+    margin: auto auto;
+}
+.game_roll{
+    height: 32.7%;
+    width: 32.7%;
+    border: 1px solid red;
+    float: left;
+}
+h1{
+    padding-left: 25px;
+    margin: 0px;
+    font-size: 500%;
+}
+.container{
+    border: 1px solid yellowgreen;
+    text-align: center;
+}
+#won_text{
+    
+}
