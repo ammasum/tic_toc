@@ -1,9 +1,10 @@
 #game_body{
     height: 320px;
     width: 320px;
-    margin: auto auto;
+    margin: auto;
 }
 .game_roll{
+    position: relative;
     height: 32.7%;
     width: 32.7%;
     border: 1px solid red;
@@ -20,4 +21,10 @@ h1{
 }
 #won_text{
     
+}
+p{
+    padding: 0;
+    font-size: 80px;
+    position: absolute;
+    left: 20px;
 }

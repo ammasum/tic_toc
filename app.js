@@ -1,18 +1,19 @@
 var game_roll = document.querySelectorAll(".game_roll"); //Select all square box
 var game_dice = "X"; // X or 0
+var game_position = "process";
 var player_num = document.querySelector("#player"); //which player trun
 var count_click = 0; //cound how many box select
 for(var i = 0; i<game_roll.length; i++){ //loop through all box
     game_roll[i].addEventListener("click", function(){
-        if(this.querySelector("h1").innerHTML == ""){ //check is box empty 
+        if(this.querySelector("p").innerHTML == ""){ //check is box empty 
             var player = player_num.innerText; //get present player num
             player = player.replace(/\s/g, '');  //remove all white char
-            this.querySelector("h1").innerHTML = game_dice; // changing dice
+            this.querySelector("p").innerHTML = game_dice; // changing dice
             if(game_dice == "X"){
-                this.querySelector("h1").style.color = "#EC19D6";
+                this.querySelector("p").style.color = "#EC19D6";
             }
             else{
-                this.querySelector("h1").style.color = "#50FB00";
+                this.querySelector("p").style.color = "#50FB00";
             }
             /// below calling function to check game condition, is it win click or draw
             left_to_right(this.getAttribute("id"), game_dice, player_num.innerText);
@@ -31,7 +32,7 @@ for(var i = 0; i<game_roll.length; i++){ //loop through all box
                 game_dice = "0";
             }
             count_click++; // increase counting
-            if(count_click === 9){ //if all box is select then over
+            if(count_click === 9 && game_position == "process"){ //if all box is select then over
                 var won = document.querySelector("#won_text");
                 won.innerHTML = "Draw";
             }
@@ -51,8 +52,8 @@ function left_to_right(id, val, player){
     player = player.replace(/\s/g, '');
     if(a == val && b == val && c == val){
         var won = document.querySelector("#won_text");
-        var won = document.querySelector("#won_text");
         won.innerHTML = "Player " + player + " won";
+        game_position = "won";
     }
 }
 
@@ -68,6 +69,7 @@ function top_to_down(id, val, player){
     if(a == val && b == val && c == val){
         var won = document.querySelector("#won_text");
         won.innerHTML = "Player " + player + " won";
+        game_position = "won"
     }
 }
 function angle(val, player){
@@ -81,6 +83,7 @@ function angle(val, player){
     if(a == val && b == val && c == val){
         var won = document.querySelector("#won_text");
         won.innerHTML = "Player " + player + " won";
+        game_position = "won";
     }
     var a = document.querySelector("#col_1_row_3").innerText;
     var c = document.querySelector("#col_3_row_1").innerText;
@@ -90,5 +93,6 @@ function angle(val, player){
     if(a == val && b == val && c == val){
         var won = document.querySelector("#won_text");
         won.innerHTML = "Player " + player + " won";
+        game_position = "won";
     }
 }
