@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 #game_body{
     height: 320px;
     width: 320px;
@@ -5,8 +9,8 @@
 }
 .game_roll{
     position: relative;
-    height: 32.7%;
-    width: 32.7%;
+    height: 33%;
+    width: 33%;
     border: 1px solid red;
     float: left;
 }
@@ -27,4 +31,19 @@ p{
     font-size: 80px;
     position: absolute;
     left: 20px;
+}
+
+@keyframes animate{
+    0%{
+        opacity: 1;
+        transform: translate(-50px);
+    }
+    50%{
+        opacity: 1;
+        transform: translate(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
 }

@@ -54,6 +54,7 @@ function left_to_right(id, val, player){
         var won = document.querySelector("#won_text");
         won.innerHTML = "Player " + player + " won";
         game_position = "won";
+        won_game();
     }
 }
 
@@ -95,4 +96,9 @@ function angle(val, player){
         won.innerHTML = "Player " + player + " won";
         game_position = "won";
     }
+}
+
+function won_game(){
+    var won = document.querySelector("#won_text");
+    won.style.animation = "animate 3s";
 }
